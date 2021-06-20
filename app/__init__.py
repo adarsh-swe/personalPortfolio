@@ -21,3 +21,8 @@ def blog():
 @app.route('/projects')
 def projects():
     return render_template('projectsPage.html', title="Adarsh Patel", url=os.getenv("URL"))
+
+@app.route('/health')
+def health():
+    return "app running properly...", 200
+
