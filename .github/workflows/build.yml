@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  bake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build
+        uses: docker/bake-action@master
