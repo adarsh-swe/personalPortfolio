@@ -104,19 +104,10 @@ def login():
         elif not check_password_hash(user.password, password):
             error = "Incorrect password."
 
-<<<<<<< HEAD
         if error is None:
-            return "Login Successful", 200 
+            return "Login Successful", 200
         else:
             return error, 418
-=======
-        # if error is None:
-        #     return "Login Successful", 200
-        # else:
-        #     return error, 418
-
-        return error, 418
->>>>>>> b3b44c6e9d170dad68e55aadb08a1b4c8a9936c3
 
     # TODO: Return a login page
     return "Login Page not yet implemented", 501
