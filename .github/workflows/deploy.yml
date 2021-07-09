@@ -36,3 +36,7 @@ jobs:
 
       - name: Test deployment
         run: bash prod-test.sh
+
+      - name: My backup step
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
