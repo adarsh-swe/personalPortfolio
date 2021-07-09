@@ -22,6 +22,9 @@ else
     echo -e "${RED}Fail: website failed to load${NC}" 
 fi
 
+echo $healthEndpoint
+echo $aboutPage
+
 #health endpoint
 if [ $healthEndpoint -eq 200 ] ; then 
     echo -e "${GREEN}Success: health endpoint verified${NC}"
