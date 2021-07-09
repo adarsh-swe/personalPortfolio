@@ -2,17 +2,12 @@ import os
 from flask import Flask, render_template, send_from_directory, request, redirect
 from dotenv import load_dotenv
 
-# from . import db
 from werkzeug.security import check_password_hash, generate_password_hash
-
-# from app.db import get_db
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 load_dotenv()
 app = Flask(__name__)
-# app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
-# db.init_app(app)
 app.config[
     "SQLALCHEMY_DATABASE_URI"
 ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
