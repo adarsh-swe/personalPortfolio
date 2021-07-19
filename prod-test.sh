@@ -62,6 +62,7 @@ else
 fi
 
 echo -e "\n*** CHECKING REGISTER AND LOGIN ENDPOINTS ***\n"
+curl -X POST -d "username=test&password=test" https://adarsh-portfolio.duckdns.org/register
 
 #user already created with username test and password test
 #test successful login
@@ -96,7 +97,7 @@ counter=$((counter+flag))
 
 #testing the register endpoint 
 
-curl -X POST -d "username=test&password=test" https://adarsh-portfolio.duckdns.org/register
+
 
 #check if empty username is detected 
 curl -X POST -d "username=&password=tessst" https://adarsh-portfolio.duckdns.org/register | grep "Username is required" -q
