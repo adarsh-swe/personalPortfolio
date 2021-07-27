@@ -62,7 +62,9 @@ def projects():
 
 @app.route("/health")
 def health():
-    return "app running properly...", 200
+    adarsh = UserModel.query.filter_by(username="adarsh").first()
+    isIn = "yes" if adarsh is not None else "no"
+    return f"app running properly...adarsh is in: {isIn}", 200
 
 
 @app.route("/register", methods=("GET", "POST"))
